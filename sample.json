@@ -1,0 +1,134 @@
+{
+  "name": "aks-agentpool-14351057-vmss_0",
+  "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/MC_slKubeflow_slk8stest_northeurope/providers/Microsoft.Compute/virtualMachineScaleSets/aks-agentpool-14351057-vmss/virtualMachines/0",
+  "type": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines",
+  "location": "northeurope",
+  "tags": {
+    "aksEngineVersion": "v0.41.4-aks",
+    "creationSource": "aks-aks-agentpool-14351057-vmss",
+    "orchestrator": "Kubernetes:1.15.4",
+    "poolName": "agentpool",
+    "resourceNameSuffix": "14351057"
+  },
+  "instanceId": "0",
+  "sku": {
+    "name": "Standard_D4s_v3",
+    "tier": "Standard"
+  },
+  "properties": {
+    "latestModelApplied": false,
+    "modelDefinitionApplied": "VirtualMachine",
+    "networkProfileConfiguration": {
+      "networkInterfaceConfigurations": [
+        {
+          "name": "aks-agentpool-14351057-vmss",
+          "properties": {
+            "primary": true,
+            "enableAcceleratedNetworking": false,
+            "dnsSettings": {
+              "dnsServers": []
+            },
+            "enableIPForwarding": true,
+            "ipConfigurations": [
+              {
+                "name": "ipconfig1",
+                "properties": {
+                  "primary": true,
+                  "subnet": {
+                    "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/MC_slKubeflow_slk8stest_northeurope/providers/Microsoft.Network/virtualNetworks/aks-vnet-14351057/subnets/aks-subnet"
+                  },
+                  "privateIPAddressVersion": "IPv4",
+                  "loadBalancerBackendAddressPools": [
+                    {
+                      "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/mc_slkubeflow_slk8stest_northeurope/providers/Microsoft.Network/loadBalancers/kubernetes/backendAddressPools/kubernetes"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vmId": "43eda52c-0b60-4a64-8ecb-b8d4676c7b02",
+    "hardwareProfile": {},
+    "storageProfile": {
+      "imageReference": {
+        "publisher": "microsoft-aks",
+        "offer": "aks",
+        "sku": "aks-ubuntu-1604-201909",
+        "version": "2019.09.24",
+        "exactVersion": "2019.09.24"
+      },
+      "osDisk": {
+        "osType": "Linux",
+        "name": "aks-agentpool-143510aks-agentpool-1435105OS__1_139f979a06d34570b2465d14608a85c4",
+        "createOption": "FromImage",
+        "caching": "ReadWrite",
+        "managedDisk": {
+          "storageAccountType": "Premium_LRS",
+          "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/MC_slKubeflow_slk8stest_northeurope/providers/Microsoft.Compute/disks/aks-agentpool-143510aks-agentpool-1435105OS__1_139f979a06d34570b2465d14608a85c4"
+        },
+        "diskSizeGB": 30
+      },
+      "dataDisks": []
+    },
+    "osProfile": {
+      "computerName": "aks-agentpool-14351057-vmss000000",
+      "adminUsername": "azureuser",
+      "linuxConfiguration": {
+        "disablePasswordAuthentication": true,
+        "ssh": {
+          "publicKeys": [
+            {
+              "path": "/home/azureuser/.ssh/authorized_keys",
+              "keyData": "ssh-rsa REDACTED"
+            }
+          ]
+        },
+        "provisionVMAgent": true
+      },
+      "secrets": [],
+      "allowExtensionOperations": true,
+      "requireGuestProvisionSignal": true
+    },
+    "networkProfile": {
+      "networkInterfaces": [
+        {
+          "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/MC_slKubeflow_slk8stest_northeurope/providers/Microsoft.Compute/virtualMachineScaleSets/aks-agentpool-14351057-vmss/virtualMachines/0/networkInterfaces/aks-agentpool-14351057-vmss"
+        }
+      ]
+    },
+    "provisioningState": "Succeeded"
+  },
+  "resources": [
+    {
+      "name": "vmssCSE",
+      "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/MC_slKubeflow_slk8stest_northeurope/providers/Microsoft.Compute/virtualMachines/aks-agentpool-14351057-vmss_0/extensions/vmssCSE",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "location": "northeurope",
+      "properties": {
+        "autoUpgradeMinorVersion": true,
+        "provisioningState": "Succeeded",
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
+        "settings": {}
+      }
+    },
+    {
+      "name": "aks-agentpool-14351057-vmss-AKSLinuxBilling",
+      "id": "/subscriptions/76ab0f96-4e31-4b3c-bfbe-d8f81b2e13ed/resourceGroups/MC_slKubeflow_slk8stest_northeurope/providers/Microsoft.Compute/virtualMachines/aks-agentpool-14351057-vmss_0/extensions/aks-agentpool-14351057-vmss-AKSLinuxBilling",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "location": "northeurope",
+      "properties": {
+        "autoUpgradeMinorVersion": true,
+        "provisioningState": "Succeeded",
+        "publisher": "Microsoft.AKS",
+        "type": "Compute.AKS.Linux.Billing",
+        "typeHandlerVersion": "1.0",
+        "settings": {}
+      }
+    }
+  ]
+}
